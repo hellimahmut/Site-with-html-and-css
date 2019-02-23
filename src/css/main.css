@@ -1,0 +1,675 @@
+/* GENERAL SETTİNGS */
+
+@font-face {
+    font-family: 'Kurale';
+    src: url('/src/fonts/Kurale-Regular.ttf');
+}
+
+body {
+    background: white;
+    color: #3f3f3f;
+    font: 14px / 28px;
+    font-family: 'Kurale', Arial;
+}
+
+h1 {
+    font-size: 52px;
+    letter-spacing: 4px;
+    margin-bottom: 20px; 
+}
+
+h3 {
+    font-size: 16px;
+    color: #550D16;
+    transition: all .5s ease;
+    padding: 10px;
+}
+
+.btnDetails {
+    color: #550D16;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+
+
+.customp {
+    padding: 8.3px;
+}
+
+.item:hover .btnDetails {
+    /* Bu başlık item ın üzerine geldiğimde btnDetails ne olsun demektir.*/ 
+    color: white;
+}
+
+.sectionHeader {
+    background: #550D16;
+    border-bottom: 6px solid #000;
+    height: 60px;
+    color: white;
+    display: inline-block; /* Tamamen block olarak kapsamasın. Yani yazı bittiği halde sağa doğru background gitmesini engelliyor.*/
+    line-height: 60px; /* Text i bu şekilde kolaylıkla ortalamış oluruz. */
+    font-size: 24px;
+    padding: 5px 40px; /* Aşağıdan yukarıdan 5 px, sağ soldan 40 px */
+    letter-spacing: 2px;
+    margin-bottom: 20px;  
+}
+
+.sectionArea {
+    padding: 80px 0; /* Yukarıdan aşağıdan 80 piksel sağdan soldan 0 */ 
+}
+/* GRID SETTİNGS */
+/* Class ları seçerken başına nokta koyuyoruz. */
+.container{
+    width: 90%;
+    margin: 0 auto; /* Ortala diyoruz. */
+    display: flex; /* Container içindeki tüm yapılar yan yana geldi */
+}
+
+.featuresBody .container {
+    justify-content: space-between; /* İçeriklerin arasında ki boşlukların birbirine eşit olmasını istiyorum.*/
+}
+
+.featuresBody .container {
+    justify-content: space-between;
+}
+
+.engineBody .container {
+    justify-content: space-between;
+}
+
+.col3 {
+    flex-grow: 1; /* Sütun uzunlukları birbirine eşit olsun. */
+    width: 33.33%; /* Sütun 3 e bölündüğü için mesela col2 classın da bunu 50% yapacağız. */
+}
+
+.col2{
+    flex-grow: 1;
+    width: 50%;
+    padding: 20px;
+}
+
+
+/* HOME SETTİNGS */
+
+
+header .logo{
+    margin-right: auto; /* Sağ taraftaki boşluğu otomatik olarak ayarladı. */
+}
+
+header .logo img{
+    display: block;
+    height: 70px; 
+}
+
+.menu li{
+    float: left; /* Sola kay diyorum */
+}
+
+.menu li a{
+    padding: 27px 17px; /* Yukardan ve aşağıdan 27 px , sağdan ve soldan 17 px boşluk verdik. */
+    display: block;
+    text-decoration: none; /* alt çizgi istemiyorum */
+    letter-spacing: 2px; /* Harfler arasında ki boşluklar */
+    color: darkred;
+    transition: all .5s ease; /* Mouse ile üzerine gelince kırmızı oluyor onu kontrol ediyoruz. */
+}
+
+
+.menu li:hover a {
+    background: darkred;
+    color: white;
+}
+
+#mainSlider {
+    /* Class lar da . ile css kodu gireriz id lerde # işareti ile.*/
+    height: 500px;
+    background: url('../img/catman4.jpg') center center no-repeat; /* center ile merkezliyorum. Resimi url ile koyuyorum.*/ 
+    background-size: cover; /* Resimi benim istediğim boyuta getiriyor */ 
+}
+
+.slider {
+    width: 100%;
+}
+
+#mainCaption {
+    height: 500px;
+    background: rgba(0,0,0,.5);
+}
+
+.caption{
+    display: flex; /* Display flex dedikten sonra yazılar yan yana gelir sonra ayarlama yaparım. */
+    flex-direction: column; /* Sütun şeklinde olsun diyorum yazılar alt alta geliyor. */
+    align-items: center; /* Bu ve bir altında ki kod ile yazıyı ortaya alıyorum bu class içinde. */ 
+    justify-content: center;
+    width: 100%;
+    color: white; 
+}
+
+
+.featuresTop {
+    text-align: center; /* Class ın içindeki text i merkeze alır. */
+}
+
+.item {
+    padding: 10px 20px; /* Resimler arasında ki boşluklar için. */
+}
+
+.zoom {
+    position: relative; /* Kendi kendine bir alanı olsun diyorum. */
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top; 
+    border: 1px solid #550D16;
+}
+
+.zoom img{
+    display: block;/* inline block alanının tamamını kapsasın diye block sadece. */
+    width: 100%;    
+    height: auto;
+    transition: all .5s ease; /* Fotoğrafın üzerine gelince birden 1.25 büyümesin zamana yaydık efekt gibi. */
+    
+}
+
+.item .itemText {
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid #550D16;
+}
+
+.item:hover .zoom img{
+    transform: scale(1.25); /* Üzerine Gelince Büyüklüğü 1.25 oranında artsın. */
+
+}
+
+.item:hover h3 {
+    /* Burada hover olsun derken üzerine mouse geldiği zaman anlamında. */
+    color: white;
+}
+
+.item:hover .itemText {
+    background: #550D16;
+    color: white;
+    transition: all .5s ease;
+}
+
+.itemText p {
+    margin: 20px 0;
+}
+
+#parallax {
+    background: url('../img/catman5.jpg') center center no-repeat;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background: linear-gradient(
+        rgba(0,0,0, .7),
+        rgba(0,0,0,.7),
+    ),
+
+}
+
+#parallax p {
+    color: white;
+}
+
+.engineTop{
+    text-align: center;
+}
+
+.engineContainer {
+    position: relative;
+    width: 100%;
+}
+
+.imageOver {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.engineOverLay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(80,13,22, .7);
+    overflow: hidden;
+    width: 0; /* 0 verdim ki ben üzerine gelince kırmızı olarak birden çıksın. Onu da aşağıda 100 diyerek yapıyorum. */
+    height: 100%;
+    transition: .5s ease;
+}
+
+.engineContainer:hover .engineOverLay {
+    width: 100%;
+}
+
+.engineText {
+    white-space: nowrap; /* Üzerinde yazılan textin alt alta gelmesi veya bozulma durumlarını engellemek için. */
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.engineOverLay2 {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: rgba(80,13,22, .7);
+    overflow: hidden;
+    width: 0; /* 0 verdim ki ben üzerine gelince kırmızı olarak birden çıksın. Onu da aşağıda 100 diyerek yapıyorum. */
+    height: 100%;
+    transition: .5s ease;
+}
+
+.engineContainer:hover .engineOverLay2 {
+    width: 100%;
+    left: 0;
+}
+
+footer{
+    background-color: #550D16;
+    text-align: center;
+}
+
+.footerItem {
+    padding: 20px; /* Bu 3 kısımı birbirinden 20 px uzaklaştırıyorum. */
+}
+
+.footerItem img {
+    height: 50px;
+    opacity: .5;
+    margin-bottom: 20px;
+}
+
+.footerItem h3 {
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px; /*Harfler arası boşluk miktarı. */
+    margin-bottom: 10px; /* Yukarıdan aşağı aralık bıraktı. */
+}
+
+footer .fa {
+    font-size: 20px;
+    color: white;
+    line-height: 50px;
+    transition: .3s ease;
+}
+
+footer .fa:hover {
+    color: white;
+}
+
+footer p {
+    color: #95a5a6;
+    line-height: 20px;
+}
+
+.footerLinks a {
+    text-decoration: none; /* Alt çizgileri kaldırdık. */
+    color: #95a5a6;
+    letter-spacing: 2px;
+    transition: .3s ease;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.footerLinks a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+#carsSlider {
+    /* Class lar da . ile css kodu gireriz id lerde # işareti ile.*/
+    height: 250px;
+    background: url('../img/catman12.jpg') center center no-repeat; /* center ile merkezliyorum. Resimi url ile koyuyorum.*/ 
+    background-size: cover; /* Resimi benim istediğim boyuta getiriyor */ 
+}
+
+#carsCaption {
+    height: 250px;
+    background: rgba(0,0,0, .6)
+}
+
+#inspect {
+    background-color: #f5f5f5;
+}
+
+.inspectTop {
+    text-align: center;
+}
+
+.inspectBody .col2 {
+    display: flex;
+}
+
+/* Burada görseli küçültüp yazıları yanına koymaya çalışıyoruz.  */
+
+.inspectImage {
+    width: 40%;
+}
+
+.inspectImage img{
+    width: 100%;
+    height: auto; 
+}
+
+.inspectText {
+    width: 60%;
+    padding-left: 10px;
+    margin-bottom: 100px;
+}
+
+.date {
+    color: #333;
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 30px; 
+}
+
+h4 {
+    color: #550D16;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+
+.inspectText a {
+    float: right;
+    text-decoration: none;
+    color: #550D16;
+}
+
+.inspectText a:hover {
+    text-decoration: underline;
+}
+
+/* PROJECT X kısmını yapacağız. */
+
+.projectXTop {
+    text-align: center;
+}
+
+#projectX .containerFluid {
+    height: 500px;
+    background: url('../img/catman13.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.captionPX {
+    display: flex; /* Aşağı da olan text leri aynı satıra çekti yani yanına. */
+    background: rgba(0,0,0, .7);
+    width: 100%;
+    height: 500px;
+}
+
+.projectXInfo {
+    position: relative;
+    top:50%; /* %50 aşağı indi. */
+    left: 50%; /* %50 sola kaydırdı. */
+    margin-left: 5%;
+    padding-right: 5%;
+    transform: translate(-50%,-50%); /* Tam ortalar. */
+}
+
+.projectXTitle {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.projectXBtn {
+    background-color: #500d16;
+    cursor: pointer; /* Ok üzerine gelince el halini alır. Ok gider el gözükür. */
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    margin-top: 20px;
+    transition: all .5s ease;
+}
+
+.projectXBtn:hover {
+    background-color: #fff;
+    color: #500d16;
+}
+
+.projectXText {
+    color: white;
+}
+
+.projectXHighLight {
+    display: inline-block; /* inline-block dersek sadece yazıların olduğu bölümü block alır bunda tamamen alıyor.*/
+    background-color: #500d16;
+    padding: 30px;
+}
+
+.containerFluid .col2 {
+    padding: 0;
+}
+
+.projectXDetail li {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ABOUT SETTİNGS */
+
+#aboutSlider {
+    height: 250px;
+    background: url('../img/cat2.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#aboutCaption {
+    height: 250px;
+    background: rgba(0,0,0, .6);
+}
+
+#ourHistory {
+    background-color: #f5f5f5;
+}
+
+.ourHistoryTop {
+    text-align: center;
+}
+
+.ourHistoryBody .containerFluid{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.ourHistoryBody .col2 {
+    display: flex;
+}
+
+.ourHistoryDate {
+    flex: 1; /* Bunun sıralamayla ilgisi yok. 1 birimlik uzunluk atıyoruz.  */
+    text-align: center;
+    background-color: #500d16;
+    color: white;
+}
+
+.ourHistoryDate p {
+    font-size: 30px;
+    letter-spacing: 2px;
+    position: relative; /* Neden relative çünkü textleri ortalamak istiyorum.*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.ourHistoryImage { /* Görsel birimlere 2 birim uzunluk verdik. */
+    flex: 2;
+}
+
+.ourHistoryImage img {
+    width: 100%;
+    height: 100%;
+}
+
+.ourHistoryText {
+    flex: 3;
+    margin-left: 10px;
+}
+
+.ourHistoryText p {
+    position: relative; /* Neden relative çünkü textleri ortalamak istiyorum.*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.teamTop {
+    text-align: center;
+}
+
+.teamBody .containerFluid {
+    display: flex;
+    width: 100%;
+}
+/* Üstteki kodu yapınca aynı satır içine yerleştirdi.*/
+
+.teamMember {
+    position: relative;
+    width: 100%; /* Bulunduğu sütunun tamamı kaplaması amacıyla.*/
+}
+
+.teamMemberImg {
+    display: block; /* Yükseklik ve genişlik verebilmek için. */
+    width: 100%;
+    height: 100%;
+}
+
+.teamMemberOverLay {
+    position: absolute; /* Eğer yukarda ki position relative yazmazsak buraya absolute yazarsak sayfanın tamamına göre ayarlar.*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background-color: #500d16;
+    transition: .5s ease;
+}
+
+.teamMember:hover .teamMemberOverLay{
+    opacity: 0;
+}
+
+.teamMember:hover .teamMemberInfo {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.teamTitle {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.teamMemberInfo {
+    color: #fff;
+    background-color: rgba(80,13,22, .6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CONTACT SETTİNGS */
+
+#contactSlider {
+    height: 250px;
+    background: url('../img/cat.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#contactCaption {
+    height: 250px;
+    background: rgba(0,0,0, .6);
+}
+
+#gallery {
+    background-color: #f5f5f5;
+}
+
+.galleryTop {
+    text-align: center;
+}
+
+.gallerySlider{
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Galeri animasyonu için css kodları. */
+
+.gallerySliderItem {
+    width: 300%; /* Görseller yan yana geldikten sonra dönmesini istiyoruz. */
+    position: relative; /* Kendine göre pozisyonlansın.*/
+    left: 0; /* Sola yakın olsun. */
+    animation: slideAnimation 20s infinite; /* infinite yani devamlı dönmesini istiyorum. */
+}
+
+.gallerySliderItem img{
+    width: 33.33%; /* %300 den sonra yapınca yan yana gelmesini sağlayacağız. */
+    float: left; /* Şimdi yanyana geldiler.  */
+    height: auto;
+}
+
+@keyframes slideAnimation {
+    0% {left: 0;}
+    25% {left: -100%;}
+    50% {left: -200%;}
+    75% {left: -100%;}
+    100% {left: 0;}
+}
+
+
+/* MEDİA QURIES */
+
+@media screen and (max-width:960px){
+    .caption h1{
+        color: red;
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    footer .fa {
+        font-size: 24px;
+        /* color: yellow;  Değişikliği farketmek için. */
+    }
+
+    footer h3 {
+        font-size: 16px;
+    }
+
+    .inspectBody .container{
+        flex-direction: column; /* boyut 960 piksele gelirse dikeyleşsin bu seçtiğim sınıftaki şeyler diyorum. */
+    }
+
+    .inspectBody .container .col2{
+        width: 100%;
+    }
+}
